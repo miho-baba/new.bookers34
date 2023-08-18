@@ -5,8 +5,8 @@ root to: 'homes#top'
 
 get 'homes/about' => 'homes#about'
 
-get 'books' => 'books#index'
-
 get 'users' => 'users#index'
+
+resources :books
 
 end
