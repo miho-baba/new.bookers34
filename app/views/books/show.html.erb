@@ -1,0 +1,22 @@
+
+
+<h1>Book detail</h1>
+<p><%= @book.title %></p>
+
+<div>
+
+ <p><%= @post_image.user.name %></p>
+
+ <p><%= @book.title %></p>
+
+ <p><%= @book.body %></p>
+
+ <p><%= image_tag 'no_image.jpg' %></p>
+
+<%= link_to 'Show', book_path(@book.id) %>
+
+<%= link_to 'Edit', edit_book_path(@book.id) %>
+
+<%= link_to 'Destroy', book_path(@book.id) %>
+
+</div>
