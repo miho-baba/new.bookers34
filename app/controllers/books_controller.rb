@@ -7,6 +7,7 @@ end
 
 def create
   @book = Book.new(book_params)
+  @book.user_id = current_user.id
   if @book.save
   flash[:notice] = "Book was successfully created."
   redirect_to books_path(@book.id)
@@ -21,17 +22,18 @@ def show
 end
 
 def edit
+  @book = Book.find(params[:id])
 end
 
-def new
+def newb
   @book = book.new
 end
 
 
-def destory
-  books = Book.find(params[:id])
-  books.destroy
-  redirect_to '/users'
+def destroy
+  book = Book.find(params[:id])
+  book.destroy
+  redirect_to '/books'
 end
 
 def update

@@ -17,7 +17,13 @@
      <span>
     <%= link_to "Bookers", root_path %>
      </span>
-      </a>
+
+
+     <li>
+      <%= link_to 'User info', users_path(current_user) %>
+     </li>
+
+
 
       <span>
     <%= link_to "Home", root_path %>

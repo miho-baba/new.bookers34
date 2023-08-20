@@ -8,5 +8,6 @@ get 'homes/about' => 'homes#about'
 get 'users' => 'users#index'
 
 resources :books
+resources :users, only: [:show, :edit]
 
 end
