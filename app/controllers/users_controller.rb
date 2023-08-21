@@ -4,13 +4,17 @@ def index
 end
 
 def show
- @user = Book.find(params[:id])
- @book = @user.books
- params.require(:book).permit(:title, :body, :image)
+ @user = User.find(params[:id])
+ @books = @user.books
 end
 
 def edit
 
 end
+private
 
+      def user_params
+        params.require(:user).permit(:name, :profile_image, :introduction)
+
+      end
 end
