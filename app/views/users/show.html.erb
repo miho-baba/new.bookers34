@@ -1,22 +1,16 @@
 
-<h1>User info</h1>
+<h1>Books</h1>
+<p><%= @book.title %></p>
 
+  <p><%= image_tag @user.get_profile_image(100,100)%></p>
 
-<div>
-<% if @user.profile_image.attached? %>
-          <%= image_tag @user.profile_image, :class => "mw50" %>
-        <% else %>
-         <%= image_tag 'no_image' %>
-        <% end %>
- <p><%= @user.name %></p>
-<% @books.each do |book|%>
- <p><%= book.title %></p>
-
- <p><%= book.body %></p>
-<% end %>
- <p><%= image_tag 'no_image' %></p>
-
-<%= link_to 'Edit', edit_user_path(@user.id) %>
-
-</div>
-
+<table class="table table-hover table-inverse">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Opinion</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+      </table>
