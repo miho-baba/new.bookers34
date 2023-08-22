@@ -5,6 +5,12 @@ root to: 'homes#top'
 
 get 'homes/about' => 'homes#about'
 
+get 'homes' => 'homes#index'
+
+get 'homes/index' => 'homes#edit'
+
+get 'homes/edit' => 'homes#show'
+
 get 'users' => 'users#index'
 
 resources :books
