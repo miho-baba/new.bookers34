@@ -64,13 +64,20 @@
               <td>
               <p><%= book.body %></p>
             </td>
+            <td>
+              <p><%= link_to 'edit', edit_book_path(book.id)%></p>
+            </td>
+            <td>
+              <p><%= link_to 'destory', book_path(book.id),method: :delete, "data-confirm" => "本当に削除しますか？" %></p>
+            </td>
           </tr>
           <% end %>
-            <footer>
-              <p>CopyRight Infratop.inc</p>
-            </footer>
         </tbody>
       </table>
     </div>
   </div>
 </div>
+
+    <footer>
+      <p>CopyRight Infratop.inc</p>
+    </footer>

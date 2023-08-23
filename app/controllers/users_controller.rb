@@ -12,9 +12,9 @@ class UsersController < ApplicationController
     @books = @user.books
   end
 
-def edit
-
-end
+  def edit
+    @user = User.find(params[:id])
+  end
 private
 
   def user_params
