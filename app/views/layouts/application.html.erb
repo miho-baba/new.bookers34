@@ -5,7 +5,7 @@
     <title>Bookers2</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <script src="https://kit.fontawesome.com/e0c0e0275e.js" crossorigin="anonymous"></script>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -14,41 +14,64 @@
 
     <body class="d-flex flex-column vh-100">
     <header class="shadow-sm">
-      <nav class="bg-black text-white navbar navbar-expand-lg navbar-light">
-        <div class="container">
+      <nav class="bg-black navbar navbar-expand-lg navbar-light">
+      <div class="container">
+<a class="navbar-brand p-3" href="/"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
   <%= link_to "Bookers", root_path %>
   <ul class="navbar-nav ml-auto">
   <% if user_signed_in? %>
     <li class="nav-item">
-      <%= link_to "Bookers", root_path %>
+      <%= link_to "Bookers", root_path, class: 'nav-link text-dark' %>
     </li>
     <li class="nav-item">
-      <%= link_to 'Bookers', users_path(current_user.id) %>
+      <%= link_to 'Bookers', users_path(current_user.id), class: 'nav-link text-dark' %>
     </li>
     <li class="nav-item">
-      <%= link_to "Home", user_path(current_user) %>
+      <%= link_to "Home", user_path(current_user), class: 'nav-link text-dark' %>
+      <div class="social"></div>
+      <i class="fa-solid fa-house-chimney"></i>
     </li>
     <li class="nav-item">
-      <%= link_to "Users", users_path %>
+      <%= link_to "Users", users_path, class: 'nav-link text-dark' %>
+      <div class="social"></div>
+      <i class="fa-solid fa-users"></i>
     </li>
     <li class="nav-item">
-      <%= link_to "Books", books_path %>
+      <%= link_to "Books", books_path, class: 'nav-link text-dark' %>
+      <div class="social"></div>
+      <i class="fa-solid fa-book-open"></i>
     </li>
     <li class="nav-item">
-      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-dark' %>
+      <div class="social"></div>
+      <i class="fa-solid fa-right-from-bracket"></i>
     </li>
   <% else %>
     <li class="nav-item">
-      <%= link_to "Home", root_path %>
+      <%= link_to "Home", root_path, class: 'nav-link text-dark' %>
+      <div class="social"></div>
+      <i class="fa-solid fa-house-chimney"></i>
     </li>
     <li class="nav-item">
-      <%= link_to "About", homes_about_path %>
+      <%= link_to "About", homes_about_path, class: 'nav-link text-dark' %>
+      <div class="social"></div>
+      <i class="fa-solid fa-link"></i>
     </li>
     <li class="nav-item">
-      <%= link_to "Sign up", new_user_registration_path %>
+      <%= link_to "Sign up", new_user_registration_path, class: 'nav-link text-dark' %>
+      <div class="social"></div>
+      <i class="fa-solid fa-user-plus"></i>
     </li>
     <li class="nav-item">
-      <%= link_to "Log in", new_user_session_path %>
+      <%= link_to "Log in", new_user_session_path, class: 'nav-link text-dark' %>
+      <div class="social"></div>
+      <i class="fa-solid fa-right-to-bracket"></i>
     </li>
     <% end %>
     </ul>
@@ -59,9 +82,10 @@
   <main class="mb-auto">
     <%= yield %>
     </main>
-     <footer class="bg-white text-black">
+     <footer class="bg-white text-black pt-5 pb-4">
       <div class="container">
       <div class="row no-gutters">
+        <div class="col-md-4">
         <div class="col-md-8">
         <div class="text-black mt-2 mb-3">
         <ul class="p-0 list-unstyled">
