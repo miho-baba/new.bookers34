@@ -25,10 +25,10 @@
               <p><%= book.body %></p>
             </td>
             <td>
-              <p><%= link_to 'edit', edit_book_path(book.id)%></p>
+              <p><%= link_to 'Edit', edit_book_path(book.id), class: "btn btn-sm btn-success edit" %></p>
             </td>
             <td>
-              <p><%= link_to 'destory', book_path(book.id),method: :delete, "data-confirm" => "本当に削除しますか？" %></p>
+              <p><%= link_to 'Destory', book_path(book.id),method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-sm btn-danger destory" %></p>
             </td>
           <% end %>
           </tr>

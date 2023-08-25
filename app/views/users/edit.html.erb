@@ -12,25 +12,24 @@
     <% end %>
   </ul>
 <% end %>
+
  <h1>User info</h1>
 <%= form_with model: @user, url: user_path(@user.id), get: :patch do |f| %>
-  <div class="field">
+  <div class="form-group">
     <label for="user_name">Name</label>
-    <%= f.text_field :name %>
+    <input class="form-control name" type="text" value="" name="user[name]" id="user_name">
   </div>
-  <div class="field">
-    <p><label for="user_image">Image</label>選択されていません</p>
-    <%= f.submit 'ファイルを選択' %>
+  <div class="form-group">
+    <p><label for="user_profile_image">Image</label>選択されていません</p>
+    <input class="form-control-file user_image" accept="image/*" type="file" name="user[profile_image]" id="user_profile_image">
   </div>
-  <div class="field">
+  <div class="form-group">
     <label for="user_Opinion">Introduction</label>
-    <%= f.text_area :introduction %>
+    <textarea class="form-control introduction" name="user[introduction]" id="user_Opinion"></textarea>
   </div>
-
-  <div class="actions">
-
-   <%= f.submit 'Update User' %>
- </div>
+    <div class="form-group">
+    <input type="submit" name="commit" value="Update User" class="btn btn-secondary" data-disable-with="Update User">
+  </div>
  <% end %>
     </div>
   </div>

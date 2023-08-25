@@ -19,11 +19,11 @@
         </td>
       　<td><%=@book.title%></td>
       <% if @book.user == current_user %>
-        <td><%= link_to 'edit', edit_book_path(@book.id)%></td>
+        <td><%= link_to 'Edit', edit_book_path(@book.id), class: "btn btn-sm btn-success edit" %></td>
       <% end %>
        <td><%=@book.body%></td>
       <% if @book.user == current_user %>
-        <td><%= link_to 'destory', user_path(@user.id)%></td>
+          <td><%= link_to 'Destory', user_path(@user.id), class: 'btn btn-sm btn-danger destory' %></td>
       <% end %>
         </tr>
         </tbody>
