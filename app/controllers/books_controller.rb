@@ -12,7 +12,7 @@ def create
   @book.user_id = current_user.id
   if @book.save
   flash[:notice] = "You have created book successfully."
-  redirect_to books_path(@book.id)
+  redirect_to book_path(@book.id)
   else
     @user = current_user
     @books = Book.all
@@ -27,7 +27,7 @@ end
 
 def edit
    book = Book.find(params[:id])
-  unless book.id == current_book.id
+  unless book.id == current_user.id
     redirect_to book_path
   end
 
