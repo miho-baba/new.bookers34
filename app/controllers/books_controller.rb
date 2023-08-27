@@ -47,7 +47,7 @@ end
 
 def update
   book = Book.find(params[:id])
-  unless book.id == current_book.id
+  unless book.id == current_user.id
     redirect_to book_path
   end
 
