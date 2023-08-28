@@ -11,10 +11,10 @@
         <tr>
 
         <td>
-          <%= link_to user_path(@user.id) do %>
+          <%= link_to user_path(@book.user) do %>
           <%= image_tag @book.user.get_profile_image(100,100) %>
           <br>
-          <%=@user.name%>
+          <%=@book.user.name%>
           <% end %>
         </td>
 
@@ -29,7 +29,7 @@
       <% end %>
 
       <% if @book.user == current_user %>
-          <td><%= link_to 'Destory', user_path(@user.id), class: 'btn btn-sm btn-danger destory' %></td>
+          <td><%= link_to 'Destroy', book_path(@book.id), method: :delete, class: 'btn btn-sm btn-danger destroy' %></td>
       <% end %>
         </tr>
         </tbody>
